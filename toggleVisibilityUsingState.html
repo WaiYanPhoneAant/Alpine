@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Visibility Using State</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<style>
+    .active{
+        color: blue;
+    }
+</style>
+<body>
+    <!-- simple toggle -->
+    <div class="" x-data="{ show : false }">
+        <button @click="show=!show" x-text="show? 'Hide' : 'Show'">show</button>
+        <h1 x-show="show">Hello word</h1>
+    </div>
+
+
+    
+    <div class="" x-data="{ currentTab : 'first' }" style="margin-top: 1rem;margin-bottom: 1rem;">
+        <div class="" style="margin-bottom: 1rem;">
+          
+            <button @click="currentTab='first'" :class="{'active':currentTab==='first'}">first</button>
+            <button @click="currentTab='second'" :class="{'active':currentTab==='second'}">second</button>
+            <button @click="currentTab='third'" :class="{'active':currentTab==='third'}">third</button>
+        </div>
+        <div class="" style="border:1px solid black; padding:1rem;">
+            <div x-show="currentTab === 'first'">
+                <p>first</p>
+            </div>
+            
+            <div x-show="currentTab === 'second'">
+                <p>second</p>
+            </div>
+            
+            <div x-show="currentTab === 'third'">
+                <p>third</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

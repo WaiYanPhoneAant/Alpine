@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Binding</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <!-- input binding -->
+    <div class="" x-data="{ message :  'hello world ' }">
+        <h1 x-text="message" @click="message='changed'"></h1>
+        <input type="text" x-model="message">
+    </div>
+
+
+    <div class="" x-data="{ first : 0 ,second:0 }"> 
+        <input type="text" x-model.number="first"> + <input type="text" x-model.number="second"> = <input type="text" x-model="first+second">
+    </div>
+</body>
+</html>
